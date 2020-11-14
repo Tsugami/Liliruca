@@ -44,7 +44,7 @@ class Table extends LilirucaCommand {
         {
           id: 'place',
           type: 'place',
-          otherwise: message => message.ct('noPlace')
+          otherwise: ({ util, ct }) => util.send(ct('noPlace'))
         },
         {
           id: 'storage',

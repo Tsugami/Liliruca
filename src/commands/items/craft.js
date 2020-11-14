@@ -18,7 +18,7 @@ class Craft extends LilirucaCommand {
         {
           id: 'item',
           type: Argument.validate('item', (m, p, value) => value.craftable),
-          otherwise: message => message.ct('noCraftable')
+          otherwise: ({ util, ct }) => util.send(ct('noCraftable'))
         },
         {
           id: 'amount',

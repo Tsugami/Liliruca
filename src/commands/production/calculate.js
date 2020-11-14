@@ -16,7 +16,7 @@ class Calculate extends LilirucaCommand {
         {
           id: 'place',
           type: 'place',
-          otherwise: message => message.ct('invalidPlace')
+          otherwise: ({ util, ct }) => util.send(ct('invalidPlace'))
         },
         {
           id: 'firstValue',

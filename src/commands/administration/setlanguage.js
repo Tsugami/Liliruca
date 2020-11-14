@@ -13,7 +13,7 @@ class SetLanguage extends LilirucaCommand {
         {
           id: 'language',
           type: languages,
-          otherwise: message => message.ct('error', { languages: languages.map(l => `\`${l}\``).join(', ') })
+          otherwise: ({ util, ct }) => util.send(ct('error', { languages: languages.map(l => `\`${l}\``).join(', ') }))
         }
       ]
     })

@@ -13,7 +13,7 @@ class SetPrefix extends LilirucaCommand {
         {
           id: 'prefix',
           type: Argument.validate('string', (m, phrase) => phrase.length < PREFIX_MAX_LIMIT),
-          otherwise: message => message.ct('error', { max: PREFIX_MAX_LIMIT })
+          otherwise: ({ util, ct }) => util.send(ct('error', { max: PREFIX_MAX_LIMIT }))
         }
       ]
     })

@@ -15,12 +15,12 @@ class Give extends LilirucaCommand {
         {
           id: 'mentionMember',
           type: 'realMember',
-          otherwise: message => message.ct('noUser')
+          otherwise: ({ util, ct }) => util.send(ct('noUser'))
         },
         {
           id: 'amount',
           type: Argument.range('integer', GIVE_MIN, Infinity),
-          otherwise: message => message.ct('noValue', { min: GIVE_MIN })
+          otherwise: ({ util, ct }) => util.send(ct('noValue', { min: GIVE_MIN }))
         }
       ]
     })

@@ -18,7 +18,7 @@ class Sale extends LilirucaCommand {
         {
           id: 'item',
           type: 'item',
-          otherwise: message => message.t('errors:noItem')
+          otherwise: ({ util, t }) => util.send(t('errors:noItem'))
         },
         {
           id: 'amount',

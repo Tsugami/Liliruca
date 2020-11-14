@@ -17,7 +17,7 @@ class Eval extends LilirucaCommand {
         {
           id: 'code',
           match: 'content',
-          otherwise: 'Digite um código a ser executado!'
+          otherwise: ({ util }) => util.send('Digite um código a ser executado!')
         }
       ]
     })

@@ -13,7 +13,7 @@ class Setbackground extends LilirucaCommand {
         {
           id: 'id',
           type: Argument.range('integer', 1, backgrounds.length, true),
-          otherwise: message => message.ct('invalidNumber')
+          otherwise: ({ util, ct }) => util.send(ct('invalidNumber'))
         }
       ]
     })

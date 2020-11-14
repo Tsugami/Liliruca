@@ -14,7 +14,7 @@ class Storage extends LilirucaCommand {
         {
           id: 'place',
           type: 'place',
-          otherwise: message => message.t('errors:noPlace')
+          otherwise: ({ util, t }) => util.send(t('errors:noPlace'))
         },
         {
           id: 'levels',

@@ -19,7 +19,7 @@ class Box extends LilirucaCommand {
         {
           id: 'box',
           type: Argument.validate('item', (m, p, value) => value.type === 'box'),
-          otherwise: message => message.t('errors:noItem')
+          otherwise: ({ util, t }) => util.send(t('errors:noItem'))
         }
       ]
     })

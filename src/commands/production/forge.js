@@ -18,7 +18,7 @@ class Forge extends LilirucaCommand {
         {
           id: 'ore',
           type: Argument.validate('item', (m, p, value) => value.forge),
-          otherwise: message => message.ct('noOre')
+          otherwise: ({ util, ct }) => util.send(ct('noOre'))
         },
         {
           id: 'amount',
